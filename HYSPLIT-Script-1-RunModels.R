@@ -1,4 +1,4 @@
-## HYSPLIT script series for JN
+## Generic 'run hysplit' script series
 ## 1 - Running the model contiguously
 
 # Matt Harris
@@ -38,7 +38,8 @@
 # It is also possible to scrape the files directly via R but that's quite involved. 
 # Note that while splitr can technically download met files on an as-needed basis,
 #   this is extremely slow. Definitely best to get the files in advance.
-
+# You can also contact me at matt.harris@earthsciences.nz as I have a personal collection of met data 
+#   in a OneDrive folder if the arl FTP is too tricky.
 
 ##### SCRIPT SETUP [ALWAYS RUN] #####
 
@@ -75,7 +76,7 @@ pacman::p_load(splitr, openair, trajSpatial)
 # pacman::p_load(raster,rgdal,mapproj,ggplot2,mapdata,viridis)
 
 ## WORKING DIRECTORY: DEFAULT HYSPLIT INSTALL FOLDER
-wd <- "C:/hysplit/working/"
+wd <- "C:/HYSPLIT/working/"
 setwd(wd)
 
 ## PROJECT DIRECTORY
