@@ -1,0 +1,4 @@
+
+This repository contains scripts and example data to enable generic use
+of the hysplit model via R for back-trajectory modelling around
+Antarctica and the Southern Ocean.
