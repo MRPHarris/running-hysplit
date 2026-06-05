@@ -256,20 +256,10 @@ Yearly_Site_HYSPLIT <- function(site_name,
                                 met_dir, 
                                 output_folder = "C:/hysplit4/working/1/", 
                                 verbose = FALSE){
-  library(pacman)
-  pacman::p_load(splitr,lubridate,tibble,dplyr,R.utils,rgdal,chron)
   if(ntraj_per_day > 1){
     ntraj_1perday = FALSE
   } else{
     ntraj_1perday = TRUE
-  }
-  if(isTRUE(verbose)){
-    PromptContinue <- if(interactive()){
-      askYesNo("Generate yearly trajectories for the target year using user specifications? This could take a while!", 
-               default = TRUE, prompts = getOption("askYesNo", gettext(c("Y/N/C"))))
-    }
-    if(!isTRUE(PromptContinue)){
-      stop("User terminated function")}
   }
   if(nchar(site_name) <= 5){
   } else{
@@ -322,7 +312,7 @@ Yearly_Site_HYSPLIT <- function(site_name,
     start_date <- paste0(year,"-",month_formatted,"-",start_date_day_formatted)
     end_date <- paste0(year,"-",month_formatted,"-",days_in_months[i])
     i_date <- Sys.Date()
-    i_date <- as.character(as.Date(i_date, "%Y-%m-%d"), "%d%m%y")
+    i_date <- format(as.Date(i_date, "%d-%m-%y"), "%d%m%y")
     set_name <- paste0(site_name,"-",year,"-",i_date,"-YSH-",month_init[i])
     month_trajset <- hysplit_trajectory(
       lat = site_lat,
@@ -365,7 +355,7 @@ Export_YSH <- function(site_name, year, lon, lat, traj_duration,
     start_date <- paste0(year,"-",month_formatted,"-",start_date_day_formatted)
     end_date <- paste0(year,"-",month_formatted,"-",days_in_months[i])
     i_date <- Sys.Date() # iterative output name for each monthly trajectory bundle
-    i_date <- as.character(as.Date(i_date, "%Y-%m-%d"), "%d%m%y")
+    i_date <- format(as.Date(i_date, "%Y-%m-%d"), "%d%m%y")
     set_name <- paste0(site_name,"-",year,"-",i_date,"-YSH-",month_init[i])
     traj_reread <- trajectory_read(output_folder = paste0(output_folder,set_name))
     traj_converted <- convert_openair(traj_reread)
