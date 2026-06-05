@@ -11,3 +11,5 @@ It is intended for long-term analysis of daily releases, either forwards or back
 The current github repo is https://github.com/MRPHarris/running-hysplit.
 
 At present, only the first script is functional.
+
+Download/fork the repository, then work from the .Rproj file using Rstudio. 

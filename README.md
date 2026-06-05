@@ -12,3 +12,6 @@ The current github repo is
 <https://github.com/MRPHarris/running-hysplit>.
 
 At present, only the first script is functional.
+
+Download/fork the repository, then work from the .Rproj file using
+Rstudio.
