@@ -67,7 +67,7 @@ pacman::p_load(dplyr,magrittr,lubridate,tibble,R.utils,tidyverse,openair,chron, 
 # For running splitr, I recommend using my personal fork of the package as I've 
 #   solved a few bugs over the years. Refer to the package uninstall lines above if 
 #   you need to get rid of a previous splitr installation first.
-# install.packages('pak')
+install.packages('pak')
 pak::pak("MRPHarris/splitr@main")
 pak::pak("MRPHarris/trajSpatial")
 pacman::p_load(splitr, openair, trajSpatial)
