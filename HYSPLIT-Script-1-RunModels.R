@@ -51,14 +51,14 @@
 install.packages("pacman")
 library(pacman)
 
-install.packages('pkgload')
-install.packages('installr')
+# install.packages('pkgload')
+# install.packages('installr')
 
 ## Package uninstall + reinstall lines, if needed
 p_load(pkgload,installr,pak)
-# pkgload::unload('splitr')
-# installr::uninstall.packages('splitr')
-# pak::pak("MRPHarris/splitr@main")
+# pkgload::unload('trajSpatial')
+# installr::uninstall.packages('trajSpatial')
+# pak::pak("MRPHarris/trajSpatial")
 
 ## CORE PACKAGES: SYNTAX
 pacman::p_load(dplyr,magrittr,lubridate,tibble,R.utils,tidyverse,openair,chron, here, pak)
