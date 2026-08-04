@@ -10,6 +10,6 @@ It is intended for long-term analysis of daily releases, either forwards or back
 
 The current github repo is https://github.com/MRPHarris/running-hysplit.
 
-At present, only the first script is functional.
-
 Download/fork the repository, then work from the .Rproj file using Rstudio. 
+
+Some example data is included which contains one year (2015) of daily, 24 hour duration back-trajectory releases from Patriot Hills.
