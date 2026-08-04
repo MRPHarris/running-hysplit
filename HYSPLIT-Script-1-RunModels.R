@@ -55,19 +55,23 @@ install.packages('pkgload')
 install.packages('installr')
 
 ## Package uninstall + reinstall lines, if needed
-# p_load(pkgload,installr,devtools)
+p_load(pkgload,installr,pak)
 # pkgload::unload('splitr')
 # installr::uninstall.packages('splitr')
-# devtools::install_github("MRPHarris/splitr@main")
+# pak::pak("MRPHarris/splitr@main")
 
 ## CORE PACKAGES: SYNTAX
-pacman::p_load(dplyr,magrittr,lubridate,tibble,R.utils,tidyverse,openair,chron, here)
+pacman::p_load(dplyr,magrittr,lubridate,tibble,R.utils,tidyverse,openair,chron, here, pak)
 
 ## CORE PACKAGES: MODELLING
 # For running splitr, I recommend using my personal fork of the package as I've 
 #   solved a few bugs over the years. Refer to the package uninstall lines above if 
 #   you need to get rid of a previous splitr installation first.
-install.packages('pak')
+# You will need to get rtools to build these packages: 
+# <https://cran.r-project.org/bin/windows/Rtools/rtools45/rtools.html>.
+# Make sure to get the version of Rtools that matches your r version. Use `R.version()` 
+# to check which version of R you are running.
+# install.packages('pak')
 pak::pak("MRPHarris/splitr@main")
 pak::pak("MRPHarris/trajSpatial")
 pacman::p_load(splitr, openair, trajSpatial)
